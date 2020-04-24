@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <remove-node path="/api/package[starts-with(@name,'net.gini.android.vision.internal.cache')]" />')]" />
+    <remove-node path="/api/package[starts-with(@name,'net.gini.android.vision.internal.camera')]" />')]" />
+    <remove-node path="/api/package[starts-with(@name,'net.gini.android.vision.internal.fileimport')]" />')]" />
+    <remove-node path="/api/package[starts-with(@name,'net.gini.android.vision.internal.qrcode')]" />')]" />
+    
+    <remove-node path="/api/package[@name='net.gini.android.vision.internal.util']/class[@name='Size']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.internal.util']/class[@name='UriReaderAsyncTask']" />
+    
+    <remove-node path="/api/package[@name='net.gini.android.vision.analysis']/class[@name='AnalysisFragmentCompat']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.camera']/class[@name='CameraFragmentCompat']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.review.multipage']/class[@name='MultiPageReviewFragment']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.review']/class[@name='ReviewFragmentCompat']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.noresults']/class[@name='NoResultsFragmentCompat']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.onboarding']/class[@name='OnboardingPageFragmentCompat']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.onboarding']/class[@name='OnboardingFragmentCompat']" />
+    <remove-node path="/api/package[@name='net.gini.android.vision.review.multipage.thumbnails']/class[@name='ThumbnailsAdapter']" />
+    
+    <attr path="/api/package[@name='net.gini.android.vision.review']/interface[@name='ReviewFragmentListener']/method[@name='onProceedToAnalysisScreen' and count(parameter)=2]/parameter[@name='p0']"
+        name="name">p00</attr>
+</metadata>
