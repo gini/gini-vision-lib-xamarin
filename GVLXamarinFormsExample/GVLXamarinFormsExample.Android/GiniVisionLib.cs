@@ -43,7 +43,7 @@ namespace GVLXamarinFormsExample.Droid
                .SetGiniVisionNetworkService(giniNetworkService)
                .SetGiniVisionNetworkApi(giniNetworkApi)
                .SetMultiPageEnabled(true)
-               .SetQRCodeScanningEnabled(false) // Requires Google Play Services Vision and I couldn't get it to work...
+               .SetQRCodeScanningEnabled(true)
                .SetFlashButtonEnabled(true)
                .SetDocumentImportEnabledFileTypes(DocumentImportEnabledFileTypes.PdfAndImages)
                .Build();
