@@ -26,10 +26,7 @@ The networking bindings library requires additional bindings which are provided 
 
 * `"No resource found that matches the given name"` errors: set the `AndroidUseAapt2` flag to `false` in your csproj configuration.
 * When building `GVLXamarinAndroid` you encounter an error related to `OnProceedToAnalysisScreenHandler`: just delete the line the error points to in order to fix the duplicate definition.
-
-### Known Issues
-
-* QRCode scanning is not working. It requires Google's Play Services Vision, which we weren't able to get to work with our bindings library.
+* If you enable QR Code scanning and get `Failed resolution of: Lcom/google/android/gms/vision/barcode/BarcodeDetector$Builder;` or similar, then add the following NuGet packages to your Android platform project: `Xamarin.GooglePlayServices.Base`, `Xamarin.GooglePlayServices.Basement` and `Xamarin.GooglePlayServices.Vision`.
 
 iOS
 ---
