@@ -1,0 +1,11 @@
+framework module GiniVision {
+  umbrella header "GiniVision-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module GiniVision.Swift {
+    header "GiniVision-Swift.h"
+    requires objc
+}

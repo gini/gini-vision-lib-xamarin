@@ -1,0 +1,11 @@
+framework module Gini {
+  umbrella header "Gini-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module Gini.Swift {
+    header "Gini-Swift.h"
+    requires objc
+}
