@@ -51,32 +51,6 @@ public class AnalysisResultProxy: NSObject {
     }
 }
 
-@objc(ExtractionProxy)
-public class ExtractionProxy: NSObject {
-    
-    /// The extraction's entity.
-    @objc public let entity: String
-    
-    /// The extraction's value
-    @objc public var value: String
-    
-    /// The extraction's name
-    @objc public var name: String?
-    
-    @objc public init(entity: String, value: String, name: String?) {
-        
-        self.entity = entity
-        self.value = value
-        self.name = name
-        
-        super.init()
-    }
-    
-    convenience init(extraction: Extraction) {
-        self.init(entity: extraction.entity, value: extraction.value, name: extraction.name)
-    }
-}
-
 @objc(GVLProxyDelegate)
 public protocol GVLProxyDelegate {
     
