@@ -1,0 +1,10 @@
+source 'https://github.com/gini/gini-podspecs'
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+target 'PodsProject' do
+	pod 'GiniVision'
+	pod 'GiniVision/Networking'
+end
+
