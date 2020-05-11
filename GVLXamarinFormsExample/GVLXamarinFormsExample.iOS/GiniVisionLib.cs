@@ -2,6 +2,7 @@
 using System.Linq;
 using Binding;
 using Foundation;
+using ObjCRuntime;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(GVLXamarinFormsExample.iOS.GiniVisionLib))]
@@ -17,11 +18,11 @@ namespace GVLXamarinFormsExample.iOS
             Console.WriteLine("GVL finished without results.");
         }
 
-        public void GiniVisionAnalysisDidFinishWithResult(AnalysisResultProxy result)
+        public void GiniVisionAnalysisDidFinishWithResult(AnalysisResultProxy result, Action<ExtractionProxies> sendFeedbackBlock)
         {
             Console.WriteLine("Extractions returned:");
 
-            foreach (ExtractionProxy extraction in result.Extractions)
+            foreach (ExtractionProxy extraction in result.Extractions.Extractions)
             {
                 Console.WriteLine("Entity: " + extraction.Entity);
                 Console.WriteLine("Name: " + extraction.Name);
@@ -30,6 +31,13 @@ namespace GVLXamarinFormsExample.iOS
             }
 
             gvlViewController.DismissViewController(true, null);
+
+            // Let's simulate the user correcting the total value
+
+            int totalValueIndex = Array.FindIndex(result.Extractions.Extractions, extraction => extraction.Entity == "amount");
+            result.Extractions.Extractions[totalValueIndex].Value = "45.50:EUR";
+
+            sendFeedbackBlock(result.Extractions);
         }
 
         public void GiniVisionDidCancelAnalysis()

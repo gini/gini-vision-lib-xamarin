@@ -35,9 +35,9 @@ public class AnalysisResultProxy: NSObject {
     
     @objc public let images: [UIImage]
     
-    @objc public let extractions: [ExtractionProxy]
+    @objc public let extractions: ExtractionProxies
     
-    @objc public init(extractions: [ExtractionProxy], images: [UIImage]) {
+    @objc public init(extractions: ExtractionProxies, images: [UIImage]) {
         self.extractions = extractions
         self.images = images
         
@@ -47,41 +47,15 @@ public class AnalysisResultProxy: NSObject {
     convenience init(analysisResult: AnalysisResult) {
         
         let extractionProxies = analysisResult.extractions.map { ExtractionProxy(extraction: $0.value) }
-        self.init(extractions: extractionProxies, images: analysisResult.images)
-    }
-}
-
-@objc(ExtractionProxy)
-public class ExtractionProxy: NSObject {
-    
-    /// The extraction's entity.
-    @objc public let entity: String
-    
-    /// The extraction's value
-    @objc public var value: String
-    
-    /// The extraction's name
-    @objc public var name: String?
-    
-    @objc public init(entity: String, value: String, name: String?) {
-        
-        self.entity = entity
-        self.value = value
-        self.name = name
-        
-        super.init()
-    }
-    
-    convenience init(extraction: Extraction) {
-        self.init(entity: extraction.entity, value: extraction.value, name: extraction.name)
+        self.init(extractions: ExtractionProxies(extractions: extractionProxies), images: analysisResult.images)
     }
 }
 
 @objc(GVLProxyDelegate)
 public protocol GVLProxyDelegate {
     
-    @objc func giniVisionAnalysisDidFinishWith(result: AnalysisResultProxy)//,
-    //sendFeedbackBlock: @escaping ([String : ExtractionProxy]) -> Void)
+    @objc func giniVisionAnalysisDidFinishWith(result: AnalysisResultProxy,
+                                               sendFeedbackBlock: @escaping (ExtractionProxies) -> Void)
     
     @objc func giniVisionAnalysisDidFinishWithoutResults(_ showingNoResultsScreen: Bool)
     
@@ -121,7 +95,20 @@ private class ResultsDelegate: GiniVisionResultsDelegate {
     public func giniVisionAnalysisDidFinishWith(result: AnalysisResult,
                                                 sendFeedbackBlock: @escaping ([String : Extraction]) -> Void) {
         
-        gvlProxyDelegate?.giniVisionAnalysisDidFinishWith(result: AnalysisResultProxy(analysisResult: result))
+        let feedbackBlock: (ExtractionProxies) -> Void = { extractionProxies in
+            
+            var extractions = [String : Extraction]()
+            
+            for extractionProxy in extractionProxies.extractions {
+                
+                extractions[extractionProxy.entity] = Extraction(extractionProxy: extractionProxy)
+            }
+            
+            sendFeedbackBlock(extractions)
+        }
+        
+        gvlProxyDelegate?.giniVisionAnalysisDidFinishWith(result: AnalysisResultProxy(analysisResult: result),
+                                                          sendFeedbackBlock: feedbackBlock)
     }
     
     public func giniVisionAnalysisDidFinishWithoutResults(_ showingNoResultsScreen: Bool) {

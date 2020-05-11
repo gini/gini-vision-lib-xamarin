@@ -12,6 +12,7 @@
 		520EA68B2448A54C0024B2B4 /* TrustKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA6882448A54C0024B2B4 /* TrustKit.framework */; };
 		520EA68D2448A54C0024B2B4 /* Gini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA6892448A54C0024B2B4 /* Gini.framework */; };
 		520EA68F2448A54C0024B2B4 /* GiniVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA68A2448A54C0024B2B4 /* GiniVision.framework */; };
+		5255991B246415E200FCDB26 /* ExtractionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991A246415E200FCDB26 /* ExtractionProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		520EA6882448A54C0024B2B4 /* TrustKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TrustKit.framework; path = Frameworks/TrustKit.framework; sourceTree = "<group>"; };
 		520EA6892448A54C0024B2B4 /* Gini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gini.framework; path = Frameworks/Gini.framework; sourceTree = "<group>"; };
 		520EA68A2448A54C0024B2B4 /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVision.framework; sourceTree = "<group>"; };
+		5255991A246415E200FCDB26 /* ExtractionProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				520EA664244896610024B2B4 /* GVLProxy.h */,
 				520EA665244896610024B2B4 /* Info.plist */,
 				520EA67E2448A1430024B2B4 /* GVLProxy.swift */,
+				5255991A246415E200FCDB26 /* ExtractionProxy.swift */,
 			);
 			path = GVLProxy;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				520EA67F2448A1430024B2B4 /* GVLProxy.swift in Sources */,
+				5255991B246415E200FCDB26 /* ExtractionProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
