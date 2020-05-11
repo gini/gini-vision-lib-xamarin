@@ -84,3 +84,42 @@ extension ExtractionProxy {
         }
     }
 }
+
+@objc (ExtractionProxies)
+public class ExtractionProxies: NSObject {
+    
+    @objc public let extractions: [ExtractionProxy]
+    
+    init(extractions: [ExtractionProxy]) {
+        
+        self.extractions = extractions
+        
+        super.init()
+    }
+}
+
+extension Extraction {
+    
+    convenience init(extractionProxy: ExtractionProxy) {
+        
+        self.init(box: Box(boxProxy: extractionProxy.box),
+                  candidates: extractionProxy.candidates,
+                  entity: extractionProxy.entity,
+                  value: extractionProxy.value,
+                  name: extractionProxy.name)
+    }
+}
+
+extension Extraction.Box {
+    
+    convenience init?(boxProxy: ExtractionProxy.BoxProxy?) {
+        
+        guard let boxProxy = boxProxy else { return nil }
+        
+        self.init(height: boxProxy.height,
+                  left: boxProxy.left,
+                  page: boxProxy.page,
+                  top: boxProxy.top,
+                  width: boxProxy.width)
+    }
+}
