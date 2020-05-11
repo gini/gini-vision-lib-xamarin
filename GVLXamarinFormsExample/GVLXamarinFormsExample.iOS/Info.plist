@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>This app needs camera access to snap pictures of your invoices.</string>
+	<string>Um Dokumente mit deinem Gerät zu scannen, erlaube den Zugriff auf deine Kamera.  📸 -&gt; 📄 -&gt; 🎉</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -34,5 +34,7 @@
 	<string>GVLXamarinFormsExample</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Um Dokumente auf deinem Gerät zu scannen, erlaube den Zugriff auf deine Fotos  🏞 -&gt; 📄 -&gt; 🎉</string>
 </dict>
 </plist>

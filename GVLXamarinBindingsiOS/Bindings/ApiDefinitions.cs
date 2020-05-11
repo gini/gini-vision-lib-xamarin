@@ -65,10 +65,10 @@ namespace Binding
 		IntPtr Constructor ([NullAllowed] BoxProxy box, [NullAllowed] string candidates, string entity, string value, [NullAllowed] string name);
 	}
 
-	// @interface GVLProxy_Swift_253 (ExtractionProxy)
+	// @interface GVLProxy_Swift_254 (ExtractionProxy)
 	[Category]
 	[BaseType (typeof(ExtractionProxy))]
-	interface ExtractionProxy_GVLProxy_Swift_253
+	interface ExtractionProxy_GVLProxy_Swift_254
 	{
 	}
 
@@ -112,10 +112,10 @@ namespace Binding
 		[Export ("viewController", ArgumentSemantic.Strong)]
 		UIViewController ViewController { get; }
 
-		// -(instancetype _Nonnull)initWithDomain:(NSString * _Nonnull)domain id:(NSString * _Nonnull)id secret:(NSString * _Nonnull)secret delegate:(id<GVLProxyDelegate> _Nonnull)delegate __attribute__((objc_designated_initializer));
-		[Export ("initWithDomain:id:secret:delegate:")]
+		// -(instancetype _Nonnull)initWithDomain:(NSString * _Nonnull)domain id:(NSString * _Nonnull)id secret:(NSString * _Nonnull)secret configuration:(GiniConfigurationProxy * _Nullable)configuration delegate:(id<GVLProxyDelegate> _Nonnull)delegate __attribute__((objc_designated_initializer));
+		[Export ("initWithDomain:id:secret:configuration:delegate:")]
 		[DesignatedInitializer]
-		IntPtr Constructor (string domain, string id, string secret, GVLProxyDelegate @delegate);
+		IntPtr Constructor (string domain, string id, string secret, [NullAllowed] GiniConfigurationProxy configuration, GVLProxyDelegate @delegate);
 	}
 
 	// @protocol GVLProxyDelegate
@@ -136,6 +136,46 @@ namespace Binding
 		[Abstract]
 		[Export ("giniVisionDidCancelAnalysis")]
 		void GiniVisionDidCancelAnalysis ();
+	}
+
+	// @interface GiniConfigurationProxy : NSObject
+	[BaseType (typeof(NSObject))]
+	interface GiniConfigurationProxy
+	{
+		// @property (nonatomic) BOOL debugModeOn;
+		[Export ("debugModeOn")]
+		bool DebugModeOn { get; set; }
+
+		// @property (nonatomic) enum GiniVisionImportFileTypesProxy fileImportSupportedTypes;
+		[Export ("fileImportSupportedTypes", ArgumentSemantic.Assign)]
+		GiniVisionImportFileTypesProxy FileImportSupportedTypes { get; set; }
+
+		// @property (nonatomic) BOOL flashToggleEnabled;
+		[Export ("flashToggleEnabled")]
+		bool FlashToggleEnabled { get; set; }
+
+		// @property (nonatomic) BOOL openWithEnabled;
+		[Export ("openWithEnabled")]
+		bool OpenWithEnabled { get; set; }
+
+		// @property (nonatomic) BOOL qrCodeScanningEnabled;
+		[Export ("qrCodeScanningEnabled")]
+		bool QrCodeScanningEnabled { get; set; }
+
+		// @property (nonatomic) BOOL multipageEnabled;
+		[Export ("multipageEnabled")]
+		bool MultipageEnabled { get; set; }
+
+		// @property (nonatomic, strong) UIColor * _Nullable navigationBarItemTintColor;
+		[NullAllowed, Export ("navigationBarItemTintColor", ArgumentSemantic.Strong)]
+		UIColor NavigationBarItemTintColor { get; set; }
+	}
+
+	// @interface GVLProxy_Swift_322 (GiniConfigurationProxy)
+	[Category]
+	[BaseType (typeof(GiniConfigurationProxy))]
+	interface GiniConfigurationProxy_GVLProxy_Swift_322
+	{
 	}
 
 	// @interface GiniSDKProxy : NSObject
