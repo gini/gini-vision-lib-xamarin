@@ -49,13 +49,34 @@ namespace GVLXamarinFormsExample.iOS
     public class GiniVisionLib: IGiniVisionLib
     {
 
+        private readonly String domain = "<domain>";
+        private readonly String id = "<id>";
+        private readonly String secret = "<secret>";
+
         private readonly GVLProxy gvlProxy;
         private readonly GVLDelegate gvlDelegate;
 
         public GiniVisionLib()
         {
             gvlDelegate = new GVLDelegate();
-            gvlProxy = new GVLProxy("<domain>", "<id>", "<key>", gvlDelegate);
+
+            GiniConfigurationProxy gvlConfiguration = new GiniConfigurationProxy
+            {
+                DebugModeOn = true,
+                FileImportSupportedTypes = GiniVisionImportFileTypesProxy.Pdf_and_images,
+                OpenWithEnabled = true,
+                QrCodeScanningEnabled = true,
+                MultipageEnabled = true,
+                FlashToggleEnabled = true,
+                NavigationBarItemTintColor = UIKit.UIColor.White
+            };
+
+            gvlProxy = new GVLProxy(
+                domain,
+                id,
+                secret,
+                gvlConfiguration,
+                gvlDelegate);
         }
 
         public void Start()
@@ -64,6 +85,7 @@ namespace GVLXamarinFormsExample.iOS
 
             UIKit.UIViewController gvlViewController = gvlProxy.ViewController;
             gvlDelegate.gvlViewController = gvlViewController;
+
 
             GetTopViewController().ShowViewController(gvlViewController, null);
         }

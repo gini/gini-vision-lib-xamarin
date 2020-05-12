@@ -74,14 +74,23 @@ public class GVLProxy : NSObject {
     public init(domain: String,
                 id: String,
                 secret: String,
+                configuration: GiniConfigurationProxy?,
                 delegate: GVLProxyDelegate) {
         
         self.client = Client(id: id, secret: secret, domain: domain)
         self.resultsDelegate = ResultsDelegate()
         self.resultsDelegate.gvlProxyDelegate = delegate
         
+        let giniConfiguration: GiniConfiguration
+        
+        if let configuration = configuration {
+            giniConfiguration = GiniConfiguration(giniConfigurationProxy: configuration)
+        } else {
+            giniConfiguration = GiniConfiguration()
+        }
+        
         self.viewController = GiniVision.viewController(withClient: Client(id: id, secret: secret, domain: domain),
-                                                        configuration: GiniConfiguration(),
+                                                        configuration: giniConfiguration,
                                                         resultsDelegate: resultsDelegate)
         
         super.init()

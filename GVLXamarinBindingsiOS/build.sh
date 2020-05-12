@@ -94,7 +94,7 @@ printf -- " ✅\n"
 
 # Copy to Bindings
 cd ..
-cp build/XamarinApiDef/APIDefinitions.cs ../Bindings/APIDefinitions.cs
+cp build/XamarinApiDef/* ../Bindings/
 
 printf -- "$arrow Building \033[1mGiniVision.iOS.dll\033[0m..."
 
