@@ -60,6 +60,8 @@ namespace GVLXamarinFormsExample.iOS
         {
             gvlDelegate = new GVLDelegate();
 
+            UIKit.UIFont font = UIKit.UIFont.FromName("Marker Felt", 27);
+
             GiniConfigurationProxy gvlConfiguration = new GiniConfigurationProxy
             {
                 DebugModeOn = true,
@@ -68,7 +70,8 @@ namespace GVLXamarinFormsExample.iOS
                 QrCodeScanningEnabled = true,
                 MultipageEnabled = true,
                 FlashToggleEnabled = true,
-                NavigationBarItemTintColor = UIKit.UIColor.White
+                NavigationBarItemTintColor = UIKit.UIColor.White,
+                NavigationBarTitleFont = UIKit.UIFont.FromName("Trebuchet MS", 27)
             };
 
             gvlProxy = new GVLProxy(

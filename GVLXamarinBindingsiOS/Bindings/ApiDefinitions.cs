@@ -169,12 +169,28 @@ namespace Binding
 		// @property (nonatomic, strong) UIColor * _Nullable navigationBarItemTintColor;
 		[NullAllowed, Export ("navigationBarItemTintColor", ArgumentSemantic.Strong)]
 		UIColor NavigationBarItemTintColor { get; set; }
+
+		// @property (nonatomic, strong) UIColor * _Nullable navigationBarTintColor;
+		[NullAllowed, Export ("navigationBarTintColor", ArgumentSemantic.Strong)]
+		UIColor NavigationBarTintColor { get; set; }
+
+		// @property (nonatomic, strong) UIColor * _Nullable navigationBarTitleColor;
+		[NullAllowed, Export ("navigationBarTitleColor", ArgumentSemantic.Strong)]
+		UIColor NavigationBarTitleColor { get; set; }
+
+		// @property (nonatomic, strong) UIFont * _Nullable navigationBarItemFont;
+		[NullAllowed, Export ("navigationBarItemFont", ArgumentSemantic.Strong)]
+		UIFont NavigationBarItemFont { get; set; }
+
+		// @property (nonatomic, strong) UIFont * _Nullable navigationBarTitleFont;
+		[NullAllowed, Export ("navigationBarTitleFont", ArgumentSemantic.Strong)]
+		UIFont NavigationBarTitleFont { get; set; }
 	}
 
-	// @interface GVLProxy_Swift_322 (GiniConfigurationProxy)
+	// @interface GVLProxy_Swift_313 (GiniConfigurationProxy)
 	[Category]
 	[BaseType (typeof(GiniConfigurationProxy))]
-	interface GiniConfigurationProxy_GVLProxy_Swift_322
+	interface GiniConfigurationProxy_GVLProxy_Swift_313
 	{
 	}
 
