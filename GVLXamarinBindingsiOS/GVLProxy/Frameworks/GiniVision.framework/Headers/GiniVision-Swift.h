@@ -513,6 +513,7 @@ static NSString * _Nonnull const FilePickerErrorDomain = @"GiniVision.FilePicker
 @class UIFont;
 enum GiniVisionImportFileTypes : NSInteger;
 @class UIView;
+@protocol PreferredButtonResource;
 
 SWIFT_CLASS("_TtC10GiniVision17GiniConfiguration")
 @interface GiniConfiguration : NSObject
@@ -719,6 +720,12 @@ SWIFT_CLASS("_TtC10GiniVision17GiniConfiguration")
 @property (nonatomic, strong) UIColor * _Nonnull noResultsWarningContainerIconColor;
 /// Sets if the Drag&Drop step should be shown in the “Open with” tutorial
 @property (nonatomic) BOOL shouldShowDragAndDropTutorial;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable closeButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable helpButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable backToCameraButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable backToMenuButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable nextButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable cancelButtonResource;
 @end
 
 /// Supported document types by Gini Vision library.
@@ -1229,6 +1236,13 @@ SWIFT_CLASS("_TtC10GiniVision24OnboardingViewController")
 /// Center page in case it is not centered (i.e after rotation)
 - (void)centerToPage:(NSInteger)page;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL("_TtP10GiniVision23PreferredButtonResource_")
+@protocol PreferredButtonResource
+@property (nonatomic, readonly, strong) UIImage * _Nullable preferredImage;
+@property (nonatomic, readonly, copy) NSString * _Nullable preferredText;
 @end
 
 /// Errors thrown on the review screen.
@@ -1842,6 +1856,7 @@ static NSString * _Nonnull const FilePickerErrorDomain = @"GiniVision.FilePicker
 @class UIFont;
 enum GiniVisionImportFileTypes : NSInteger;
 @class UIView;
+@protocol PreferredButtonResource;
 
 SWIFT_CLASS("_TtC10GiniVision17GiniConfiguration")
 @interface GiniConfiguration : NSObject
@@ -2048,6 +2063,12 @@ SWIFT_CLASS("_TtC10GiniVision17GiniConfiguration")
 @property (nonatomic, strong) UIColor * _Nonnull noResultsWarningContainerIconColor;
 /// Sets if the Drag&Drop step should be shown in the “Open with” tutorial
 @property (nonatomic) BOOL shouldShowDragAndDropTutorial;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable closeButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable helpButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable backToCameraButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable backToMenuButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable nextButtonResource;
+@property (nonatomic, strong) id <PreferredButtonResource> _Nullable cancelButtonResource;
 @end
 
 /// Supported document types by Gini Vision library.
@@ -2558,6 +2579,13 @@ SWIFT_CLASS("_TtC10GiniVision24OnboardingViewController")
 /// Center page in case it is not centered (i.e after rotation)
 - (void)centerToPage:(NSInteger)page;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_PROTOCOL("_TtP10GiniVision23PreferredButtonResource_")
+@protocol PreferredButtonResource
+@property (nonatomic, readonly, strong) UIImage * _Nullable preferredImage;
+@property (nonatomic, readonly, copy) NSString * _Nullable preferredText;
 @end
 
 /// Errors thrown on the review screen.

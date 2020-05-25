@@ -130,6 +130,8 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\helpButton.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\helpButton.imageset\help.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -148,6 +150,9 @@
     <PackageReference Include="Xamarin.Swift4.AVFoundation">
       <Version>4.2.1.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\helpButton.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\GVLXamarinFormsExample\GVLXamarinFormsExample.projitems" Label="Shared" />

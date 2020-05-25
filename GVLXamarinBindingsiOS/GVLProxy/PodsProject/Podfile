@@ -4,7 +4,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'PodsProject' do
-	pod 'GiniVision'
-	pod 'GiniVision/Networking'
+	pod 'GiniVision', :git => 'https://github.com/gini/gini-vision-lib-ios.git', :branch => 'PIA-687'
+	pod 'GiniVision/Networking', :git => 'https://github.com/gini/gini-vision-lib-ios.git', :branch => 'PIA-687'
 end
 

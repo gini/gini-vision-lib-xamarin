@@ -185,12 +185,36 @@ namespace Binding
 		// @property (nonatomic, strong) UIFont * _Nullable navigationBarTitleFont;
 		[NullAllowed, Export ("navigationBarTitleFont", ArgumentSemantic.Strong)]
 		UIFont NavigationBarTitleFont { get; set; }
+
+		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable closeButtonResource;
+		[NullAllowed, Export ("closeButtonResource", ArgumentSemantic.Strong)]
+		SimplePreferredButtonResource CloseButtonResource { get; set; }
+
+		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable helpButtonResource;
+		[NullAllowed, Export ("helpButtonResource", ArgumentSemantic.Strong)]
+		SimplePreferredButtonResource HelpButtonResource { get; set; }
+
+		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable backToCameraButtonResource;
+		[NullAllowed, Export ("backToCameraButtonResource", ArgumentSemantic.Strong)]
+		SimplePreferredButtonResource BackToCameraButtonResource { get; set; }
+
+		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable backToMenuButtonResource;
+		[NullAllowed, Export ("backToMenuButtonResource", ArgumentSemantic.Strong)]
+		SimplePreferredButtonResource BackToMenuButtonResource { get; set; }
+
+		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable nextButtonResource;
+		[NullAllowed, Export ("nextButtonResource", ArgumentSemantic.Strong)]
+		SimplePreferredButtonResource NextButtonResource { get; set; }
+
+		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable cancelButtonResource;
+		[NullAllowed, Export ("cancelButtonResource", ArgumentSemantic.Strong)]
+		SimplePreferredButtonResource CancelButtonResource { get; set; }
 	}
 
-	// @interface GVLProxy_Swift_313 (GiniConfigurationProxy)
+	// @interface GVLProxy_Swift_320 (GiniConfigurationProxy)
 	[Category]
 	[BaseType (typeof(GiniConfigurationProxy))]
-	interface GiniConfigurationProxy_GVLProxy_Swift_313
+	interface GiniConfigurationProxy_GVLProxy_Swift_320
 	{
 	}
 
@@ -207,5 +231,24 @@ namespace Binding
 		// -(void)removeStoredCredentials;
 		[Export ("removeStoredCredentials")]
 		void RemoveStoredCredentials ();
+	}
+
+	// @interface SimplePreferredButtonResource : NSObject
+	[BaseType (typeof(NSObject))]
+	[DisableDefaultCtor]
+	interface SimplePreferredButtonResource
+	{
+		// @property (nonatomic, strong) UIImage * _Nullable preferredImage;
+		[NullAllowed, Export ("preferredImage", ArgumentSemantic.Strong)]
+		UIImage PreferredImage { get; set; }
+
+		// @property (copy, nonatomic) NSString * _Nullable preferredText;
+		[NullAllowed, Export ("preferredText")]
+		string PreferredText { get; set; }
+
+		// -(instancetype _Nonnull)initWithPreferredImage:(UIImage * _Nullable)preferredImage preferredText:(NSString * _Nullable)preferredText __attribute__((objc_designated_initializer));
+		[Export ("initWithPreferredImage:preferredText:")]
+		[DesignatedInitializer]
+		IntPtr Constructor ([NullAllowed] UIImage preferredImage, [NullAllowed] string preferredText);
 	}
 }
