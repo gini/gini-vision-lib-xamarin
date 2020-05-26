@@ -24,6 +24,12 @@ public class GiniConfigurationProxy: NSObject {
     @objc public var navigationBarItemFont: UIFont?
     @objc public var navigationBarTitleFont: UIFont?
     
+    @objc public var closeButtonResource: SimplePreferredButtonResource?
+    @objc public var helpButtonResource: SimplePreferredButtonResource?
+    @objc public var backToCameraButtonResource: SimplePreferredButtonResource?
+    @objc public var backToMenuButtonResource: SimplePreferredButtonResource?
+    @objc public var nextButtonResource: SimplePreferredButtonResource?
+    @objc public var cancelButtonResource: SimplePreferredButtonResource?
 }
 
 extension GiniConfigurationProxy {
@@ -76,6 +82,30 @@ extension GiniConfiguration {
         
         if let navigationBarTitleFont = giniConfigurationProxy.navigationBarTitleFont {
             self.navigationBarTitleFont = navigationBarTitleFont
+        }
+        
+        if let closeButtonResource = giniConfigurationProxy.closeButtonResource {
+            self.closeButtonResource = closeButtonResource
+        }
+        
+        if let helpButtonResource = giniConfigurationProxy.helpButtonResource {
+            self.helpButtonResource = helpButtonResource
+        }
+        
+        if let backToCameraButtonResource = giniConfigurationProxy.backToCameraButtonResource {
+            self.backToCameraButtonResource = backToCameraButtonResource
+        }
+        
+        if let backToMenuButtonResource = giniConfigurationProxy.backToMenuButtonResource {
+            self.backToMenuButtonResource = backToMenuButtonResource
+        }
+        
+        if let nextButtonResource = giniConfigurationProxy.nextButtonResource {
+            self.nextButtonResource = nextButtonResource
+        }
+        
+        if let cancelButtonResource = giniConfigurationProxy.cancelButtonResource {
+            self.cancelButtonResource = cancelButtonResource
         }
     }
 }

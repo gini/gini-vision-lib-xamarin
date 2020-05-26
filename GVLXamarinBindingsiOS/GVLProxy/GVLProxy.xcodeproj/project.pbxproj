@@ -14,6 +14,7 @@
 		520EA68F2448A54C0024B2B4 /* GiniVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA68A2448A54C0024B2B4 /* GiniVision.framework */; };
 		5255991B246415E200FCDB26 /* ExtractionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991A246415E200FCDB26 /* ExtractionProxy.swift */; };
 		5255991D24695A5E00FCDB26 /* GiniConfigurationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991C24695A5E00FCDB26 /* GiniConfigurationProxy.swift */; };
+		52AE3D2B247BF22D00964A4F /* SimplePreferredButtonResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE3D2A247BF22D00964A4F /* SimplePreferredButtonResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		520EA68A2448A54C0024B2B4 /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVision.framework; sourceTree = "<group>"; };
 		5255991A246415E200FCDB26 /* ExtractionProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionProxy.swift; sourceTree = "<group>"; };
 		5255991C24695A5E00FCDB26 /* GiniConfigurationProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiniConfigurationProxy.swift; sourceTree = "<group>"; };
+		52AE3D2A247BF22D00964A4F /* SimplePreferredButtonResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePreferredButtonResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				520EA67E2448A1430024B2B4 /* GVLProxy.swift */,
 				5255991A246415E200FCDB26 /* ExtractionProxy.swift */,
 				5255991C24695A5E00FCDB26 /* GiniConfigurationProxy.swift */,
+				52AE3D2A247BF22D00964A4F /* SimplePreferredButtonResource.swift */,
 			);
 			path = GVLProxy;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				5255991D24695A5E00FCDB26 /* GiniConfigurationProxy.swift in Sources */,
 				520EA67F2448A1430024B2B4 /* GVLProxy.swift in Sources */,
 				5255991B246415E200FCDB26 /* ExtractionProxy.swift in Sources */,
+				52AE3D2B247BF22D00964A4F /* SimplePreferredButtonResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
