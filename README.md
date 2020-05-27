@@ -66,5 +66,38 @@ and to the native documentation for explanation of the options.
 
 Implement the `IGVLProxyDelegate` protocol in order to receive callbacks from GVL with extraction results or to be informed about lack of thereof.
 
+### Button Customisation
+
+Some buttons in the GVL UI can be customised by setting their title or image. To do that, set a property on yout `GVLConfigurationProxy` instance to a `SimplePreferredButtonResource`. The initaliser of `SimplePreferredButtonResource` takes two agruments: `preferredImage` and `preferredText`. If you want the button to have an icon, pass a `UIKit.UIImage` instance as the `preferredImage` and `null` as the `preferredText`. Pass your desired button title as `preferredText` if you want the button to have a text title.
+
+For instance in order to set the close button to have a text title instead of the default cross icon:
+
+```
+GiniConfigurationProxy gvlConfiguration = new GiniConfigurationProxy();
+...
+gvlConfiguration.CloseButtonResource = new new SimplePreferredButtonResource(null, "Close please");
+```
+
+The buttons currently available for customisation are:
+
+| Asset name in native documentation | `GiniConfigurationProxy` property |
+|------------------------------------|-----------------------------------|
+| `navigationCameraClose`            | `CloseButtonResource`             |
+| `navigationCameraHelp`             | `HelpButtonResource`              |
+| `navigationReviewBack`             | `BackToCameraButtonResource`      |
+| `navigationReviewBack`             | `BackToMenuButtonResource`        |
+| `navigationReviewContinue`         | `NextButtonResource`              |
+| `navigationAnalysisBack`           | `CancelButtonResource`            |
+
+### String Customisation
+
+You can also customise the user-facing strings in the GVL UI. For each language that your app supports, create a folder in your iOS project named `<lang>.lproj` where `<lang>` is an ISO language code. For instance `en.lproj` for English or `de.lproj` for German. In that folder create a file named `Localized.strings`. Then for each string key that you want to change (you can find the string keys in the native customisation guide) specify a new value like so:
+
+```
+"ginivision.navigationbar.camera.title" = "Camera screen 📸";
+```
+
+Make sure that the `*.lproj` folders and the `Localized.strings` files are added to your project.
+
 ### Troubleshooting
 * The app crashes at various points without an informative error message. Please make sure that you have enabled all capabilities and provided all usage strings in your `Info.plist` file. 
