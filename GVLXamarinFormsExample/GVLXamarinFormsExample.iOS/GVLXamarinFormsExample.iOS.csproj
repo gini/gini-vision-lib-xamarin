@@ -132,6 +132,8 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\helpButton.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\helpButton.imageset\help.pdf" />
+    <BundleResource Include="en.lproj\Localizable.strings" />
+    <BundleResource Include="de.lproj\Localizable.strings" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
