@@ -46,6 +46,8 @@ namespace GVLXamarinFormsExample.Droid
                .SetQRCodeScanningEnabled(true)
                .SetFlashButtonEnabled(true)
                .SetDocumentImportEnabledFileTypes(DocumentImportEnabledFileTypes.PdfAndImages)
+               .SetShouldShowOnboarding(false)
+               .SetShouldShowOnboardingAtFirstRun(true)
                .Build();
         }
 

@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23002FC6248914820013A3B9 /* TrustKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC3248914820013A3B9 /* TrustKit.framework */; };
+		23002FC7248914820013A3B9 /* Gini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC4248914820013A3B9 /* Gini.framework */; };
+		23002FC8248914820013A3B9 /* GiniVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC5248914820013A3B9 /* GiniVision.framework */; };
 		520EA666244896610024B2B4 /* GVLProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 520EA664244896610024B2B4 /* GVLProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		520EA67F2448A1430024B2B4 /* GVLProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA67E2448A1430024B2B4 /* GVLProxy.swift */; };
-		520EA68B2448A54C0024B2B4 /* TrustKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA6882448A54C0024B2B4 /* TrustKit.framework */; };
-		520EA68D2448A54C0024B2B4 /* Gini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA6892448A54C0024B2B4 /* Gini.framework */; };
-		520EA68F2448A54C0024B2B4 /* GiniVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520EA68A2448A54C0024B2B4 /* GiniVision.framework */; };
 		5255991B246415E200FCDB26 /* ExtractionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991A246415E200FCDB26 /* ExtractionProxy.swift */; };
 		5255991D24695A5E00FCDB26 /* GiniConfigurationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991C24695A5E00FCDB26 /* GiniConfigurationProxy.swift */; };
 		52AE3D2B247BF22D00964A4F /* SimplePreferredButtonResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE3D2A247BF22D00964A4F /* SimplePreferredButtonResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23002FC3248914820013A3B9 /* TrustKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TrustKit.framework; path = Frameworks/TrustKit.framework; sourceTree = "<group>"; };
+		23002FC4248914820013A3B9 /* Gini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gini.framework; path = Frameworks/Gini.framework; sourceTree = "<group>"; };
+		23002FC5248914820013A3B9 /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVision.framework; sourceTree = "<group>"; };
 		520EA661244896610024B2B4 /* GVLProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GVLProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		520EA664244896610024B2B4 /* GVLProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GVLProxy.h; sourceTree = "<group>"; };
 		520EA665244896610024B2B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		520EA67E2448A1430024B2B4 /* GVLProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GVLProxy.swift; sourceTree = "<group>"; };
-		520EA6882448A54C0024B2B4 /* TrustKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TrustKit.framework; path = Frameworks/TrustKit.framework; sourceTree = "<group>"; };
-		520EA6892448A54C0024B2B4 /* Gini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gini.framework; path = Frameworks/Gini.framework; sourceTree = "<group>"; };
-		520EA68A2448A54C0024B2B4 /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVision.framework; sourceTree = "<group>"; };
 		5255991A246415E200FCDB26 /* ExtractionProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionProxy.swift; sourceTree = "<group>"; };
 		5255991C24695A5E00FCDB26 /* GiniConfigurationProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiniConfigurationProxy.swift; sourceTree = "<group>"; };
 		52AE3D2A247BF22D00964A4F /* SimplePreferredButtonResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePreferredButtonResource.swift; sourceTree = "<group>"; };
@@ -35,9 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520EA68B2448A54C0024B2B4 /* TrustKit.framework in Frameworks */,
-				520EA68D2448A54C0024B2B4 /* Gini.framework in Frameworks */,
-				520EA68F2448A54C0024B2B4 /* GiniVision.framework in Frameworks */,
+				23002FC8248914820013A3B9 /* GiniVision.framework in Frameworks */,
+				23002FC6248914820013A3B9 /* TrustKit.framework in Frameworks */,
+				23002FC7248914820013A3B9 /* Gini.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,9 +77,9 @@
 		520EA66C244896880024B2B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				520EA6892448A54C0024B2B4 /* Gini.framework */,
-				520EA68A2448A54C0024B2B4 /* GiniVision.framework */,
-				520EA6882448A54C0024B2B4 /* TrustKit.framework */,
+				23002FC4248914820013A3B9 /* Gini.framework */,
+				23002FC5248914820013A3B9 /* GiniVision.framework */,
+				23002FC3248914820013A3B9 /* TrustKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

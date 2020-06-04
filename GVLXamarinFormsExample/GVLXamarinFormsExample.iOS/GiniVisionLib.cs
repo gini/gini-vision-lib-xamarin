@@ -68,6 +68,8 @@ namespace GVLXamarinFormsExample.iOS
                 QrCodeScanningEnabled = true,
                 MultipageEnabled = true,
                 FlashToggleEnabled = true,
+                OnboardingShowAtLaunch = false,
+                OnboardingShowAtFirstLaunch = true,
                 NavigationBarItemTintColor = UIKit.UIColor.White,
                 NavigationBarTitleFont = UIKit.UIFont.FromName("Trebuchet MS", 20),
                 CloseButtonResource = new SimplePreferredButtonResource(null, "Close please"),

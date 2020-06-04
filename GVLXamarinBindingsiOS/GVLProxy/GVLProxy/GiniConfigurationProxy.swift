@@ -18,6 +18,8 @@ public class GiniConfigurationProxy: NSObject {
     @objc public var openWithEnabled = false
     @objc public var qrCodeScanningEnabled = false
     @objc public var multipageEnabled = false
+    @objc public var onboardingShowAtFirstLaunch = true
+    @objc public var onboardingShowAtLaunch = true
     @objc public var navigationBarItemTintColor: UIColor?
     @objc public var navigationBarTintColor: UIColor?
     @objc public var navigationBarTitleColor: UIColor?
@@ -67,6 +69,8 @@ extension GiniConfiguration {
         self.openWithEnabled = giniConfigurationProxy.openWithEnabled
         self.qrCodeScanningEnabled = giniConfigurationProxy.qrCodeScanningEnabled
         self.multipageEnabled = giniConfigurationProxy.multipageEnabled
+        self.onboardingShowAtFirstLaunch = giniConfigurationProxy.onboardingShowAtFirstLaunch
+        self.onboardingShowAtLaunch = giniConfigurationProxy.onboardingShowAtLaunch
         
         if let navigationBarItemTintColor = giniConfigurationProxy.navigationBarItemTintColor {
             self.navigationBarItemTintColor = navigationBarItemTintColor

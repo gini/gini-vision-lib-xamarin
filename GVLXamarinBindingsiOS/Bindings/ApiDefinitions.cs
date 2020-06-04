@@ -166,6 +166,14 @@ namespace Binding
 		[Export ("multipageEnabled")]
 		bool MultipageEnabled { get; set; }
 
+		// @property (nonatomic) BOOL onboardingShowAtFirstLaunch;
+		[Export ("onboardingShowAtFirstLaunch")]
+		bool OnboardingShowAtFirstLaunch { get; set; }
+
+		// @property (nonatomic) BOOL onboardingShowAtLaunch;
+		[Export ("onboardingShowAtLaunch")]
+		bool OnboardingShowAtLaunch { get; set; }
+
 		// @property (nonatomic, strong) UIColor * _Nullable navigationBarItemTintColor;
 		[NullAllowed, Export ("navigationBarItemTintColor", ArgumentSemantic.Strong)]
 		UIColor NavigationBarItemTintColor { get; set; }
@@ -211,10 +219,10 @@ namespace Binding
 		SimplePreferredButtonResource CancelButtonResource { get; set; }
 	}
 
-	// @interface GVLProxy_Swift_320 (GiniConfigurationProxy)
+	// @interface GVLProxy_Swift_322 (GiniConfigurationProxy)
 	[Category]
 	[BaseType (typeof(GiniConfigurationProxy))]
-	interface GiniConfigurationProxy_GVLProxy_Swift_320
+	interface GiniConfigurationProxy_GVLProxy_Swift_322
 	{
 	}
 
