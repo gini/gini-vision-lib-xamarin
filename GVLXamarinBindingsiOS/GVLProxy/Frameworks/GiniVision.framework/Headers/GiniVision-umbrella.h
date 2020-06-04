@@ -14,4 +14,3 @@
 FOUNDATION_EXPORT double GiniVisionVersionNumber;
 FOUNDATION_EXPORT const unsigned char GiniVisionVersionString[];
 
-    
