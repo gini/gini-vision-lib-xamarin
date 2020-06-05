@@ -64,7 +64,6 @@ namespace GVLXamarinFormsExample.iOS
             {
                 DebugModeOn = true,
                 FileImportSupportedTypes = GiniVisionImportFileTypesProxy.Pdf_and_images,
-                OpenWithEnabled = true,
                 QrCodeScanningEnabled = true,
                 MultipageEnabled = true,
                 FlashToggleEnabled = true,
