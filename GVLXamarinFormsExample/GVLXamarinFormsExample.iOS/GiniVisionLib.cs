@@ -43,6 +43,7 @@ namespace GVLXamarinFormsExample.iOS
         public void GiniVisionDidCancelAnalysis()
         {
             Console.WriteLine("GVL cancelled");
+            gvlViewController.DismissViewController(true, null);
         }
     }
 
