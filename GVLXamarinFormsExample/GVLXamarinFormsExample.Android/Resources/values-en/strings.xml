@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="gv_qrcode_detected_popup_message_1">My popup message.</string>
+    <string name="gv_qrcode_detected_popup_message_2">My button</string>
+</resources>
