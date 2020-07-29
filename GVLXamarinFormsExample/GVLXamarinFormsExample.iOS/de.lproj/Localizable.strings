@@ -1,1 +1,4 @@
 "ginivision.navigationbar.camera.title" = "Kamerabildschirm 📸";
+
+"ginivision.camera.qrCodeDetectedPopup.message" = "Meine Nachricht.";
+"ginivision.camera.qrCodeDetectedPopup.buttonTitle" = "Mein Titel";

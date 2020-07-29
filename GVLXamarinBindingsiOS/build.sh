@@ -23,8 +23,8 @@ printf -- "\n$arrow Installing \033[1mPods\033[0m..."
 #add --repo-update
 podinstallresult=$(pod install 2>&1)
 if [ ! -f "Podfile.lock" ]; then
-  printf "\n❌  $podinstallresult"
-  exit
+    printf "\n❌  $podinstallresult"
+    exit
 fi
 
 printf -- " ✅\n"
@@ -51,17 +51,17 @@ do
     frameworkFolder=${dir##*/}
     frameworkPath=( "$dir"/*.framework )
     frameworkName=$(basename $frameworkPath .framework)
-
+    
     if [ "$frameworkFolder" == "$POD_NAME" ]; then
-      FINAL_FRAMEWORK_NAME="$frameworkName"
+        FINAL_FRAMEWORK_NAME="$frameworkName"
     fi
-
+    
     cp -R "$BUILD_IPHONE_RELEASE_DIR/$frameworkFolder/$frameworkName.framework" "${OUTPUT_FAT_LIBRARIES_PATH}"
     lipo -create "$BUILD_SIMULATOR_RELEASE_DIR/$frameworkFolder/$frameworkName.framework/$frameworkName" "$BUILD_IPHONE_RELEASE_DIR/$frameworkFolder/$frameworkName.framework/$frameworkName" -output "${OUTPUT_FAT_LIBRARIES_PATH}/$frameworkName.framework/$frameworkName"
-
+    
     SIMULATOR_MODULES_FOLDER="$BUILD_SIMULATOR_RELEASE_DIR/$frameworkFolder/$frameworkName.framework/Modules"
     if [ -d "$SIMULATOR_MODULES_FOLDER/$frameworkName.swiftmodule" ]; then
-      cp "$SIMULATOR_MODULES_FOLDER/$frameworkName.swiftmodule"/* "${OUTPUT_FAT_LIBRARIES_PATH}/$frameworkName.framework/Modules/$frameworkName.swiftmodule/"
+        cp "$SIMULATOR_MODULES_FOLDER/$frameworkName.swiftmodule"/* "${OUTPUT_FAT_LIBRARIES_PATH}/$frameworkName.framework/Modules/$frameworkName.swiftmodule/"
     fi
 done
 

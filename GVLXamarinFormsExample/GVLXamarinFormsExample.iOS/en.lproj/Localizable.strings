@@ -1,1 +1,4 @@
 "ginivision.navigationbar.camera.title" = "Camera screen 📸";
+
+"ginivision.camera.qrCodeDetectedPopup.message" = "My popup message.";
+"ginivision.camera.qrCodeDetectedPopup.buttonTitle" = "My button";
