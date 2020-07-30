@@ -28,6 +28,12 @@ Customization of the Views is provided via overriding of app resources: dimensio
 
 The example overrides the `gv_qrcode_detected_popup_message_1` and `gv_qrcode_detected_popup_message_2` string resources for both the default localization (German) and the English one. You can override other resources like this.
 
+#### Onboarding Pages
+
+You can change the onboarding pages in two ways:
+1. By creating your own instances of `OnboardingPage` and pass them in a list to `GiniVision.NewInstance().SetCustomOnboardingPages(onboardingPages)`.
+2. By using the `DefaultPagesPhone.AsArrayList()` to get the list of default onboarding pages and then altering the order of the pages or remove/add pages. If you also support tablets, then you can use `DefaultPagesTablet.AsArrayList()`.
+
 ### Troubleshooting
 
 * `"No resource found that matches the given name"` errors: set the `AndroidUseAapt2` flag to `false` in your csproj configuration.

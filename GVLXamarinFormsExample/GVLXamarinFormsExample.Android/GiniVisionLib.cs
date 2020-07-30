@@ -7,6 +7,8 @@ using Net.Gini.Android.Vision;
 using Net.Gini.Android.Vision.Camera;
 using Net.Gini.Android.Vision.Network;
 using Net.Gini.Android.Vision.Network.Model;
+using Net.Gini.Android.Vision.Onboarding;
+using Net.Gini.Android.Vision.Internal.Util;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(GVLXamarinFormsExample.Droid.GiniVisionLib))]
@@ -37,8 +39,13 @@ namespace GVLXamarinFormsExample.Droid
                 GiniVision.Cleanup(Forms.Context);
             }
 
-            // Create a GiniVision singleton instance to configure the Gini Vision Library
+            // You can change the order of the onboarding pages
+            IList<OnboardingPage> onboardingPages = DefaultPagesPhone.AsArrayList();
+            OnboardingPage page1 = onboardingPages[0];
+            onboardingPages[0] = onboardingPages[2];
+            onboardingPages[2] = page1;
 
+            // Create a GiniVision singleton instance to configure the Gini Vision Library
             GiniVision.NewInstance()
                .SetGiniVisionNetworkService(giniNetworkService)
                .SetGiniVisionNetworkApi(giniNetworkApi)
@@ -48,6 +55,7 @@ namespace GVLXamarinFormsExample.Droid
                .SetDocumentImportEnabledFileTypes(DocumentImportEnabledFileTypes.PdfAndImages)
                .SetShouldShowOnboarding(false)
                .SetShouldShowOnboardingAtFirstRun(true)
+               .SetCustomOnboardingPages(onboardingPages)
                .Build();
         }
 
