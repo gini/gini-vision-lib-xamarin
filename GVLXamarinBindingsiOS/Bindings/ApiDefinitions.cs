@@ -217,12 +217,16 @@ namespace Binding
 		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable cancelButtonResource;
 		[NullAllowed, Export ("cancelButtonResource", ArgumentSemantic.Strong)]
 		SimplePreferredButtonResource CancelButtonResource { get; set; }
+
+		// @property (copy, nonatomic) NSArray<UIView *> * _Nonnull onboardingPages;
+		[Export ("onboardingPages", ArgumentSemantic.Copy)]
+		UIView[] OnboardingPages { get; set; }
 	}
 
-	// @interface GVLProxy_Swift_322 (GiniConfigurationProxy)
+	// @interface GVLProxy_Swift_324 (GiniConfigurationProxy)
 	[Category]
 	[BaseType (typeof(GiniConfigurationProxy))]
-	interface GiniConfigurationProxy_GVLProxy_Swift_322
+	interface GiniConfigurationProxy_GVLProxy_Swift_324
 	{
 	}
 

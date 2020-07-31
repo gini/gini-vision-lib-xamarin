@@ -4,6 +4,7 @@ using Binding;
 using Foundation;
 using ObjCRuntime;
 using Xamarin.Forms;
+using UIKit;
 
 [assembly: Dependency(typeof(GVLXamarinFormsExample.iOS.GiniVisionLib))]
 namespace GVLXamarinFormsExample.iOS
@@ -75,6 +76,15 @@ namespace GVLXamarinFormsExample.iOS
                 CloseButtonResource = new SimplePreferredButtonResource(null, "Close please"),
                 HelpButtonResource = new SimplePreferredButtonResource(UIKit.UIImage.FromBundle("helpButton"), null),
             };
+
+            // You can change the order of the onboarding pages by getting the default pages and modifying the array
+            UIView[] pages = gvlConfiguration.OnboardingPages;
+            UIView page1 = pages[0];
+            pages[0] = pages[2];
+            pages[2] = page1;
+
+            // Set the modified pages to be used for onboarding
+            gvlConfiguration.OnboardingPages = pages;
 
             gvlProxy = new GVLProxy(
                 domain,

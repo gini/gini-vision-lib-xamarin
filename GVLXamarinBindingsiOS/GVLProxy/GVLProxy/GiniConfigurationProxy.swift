@@ -32,6 +32,20 @@ public class GiniConfigurationProxy: NSObject {
     @objc public var backToMenuButtonResource: SimplePreferredButtonResource?
     @objc public var nextButtonResource: SimplePreferredButtonResource?
     @objc public var cancelButtonResource: SimplePreferredButtonResource?
+    
+    @objc public var onboardingPages: [UIView] {
+        get {
+            if let pages = onboardingCustomPages {
+                return pages
+            }
+            return GiniConfiguration().onboardingPages
+        }
+        set {
+            self.onboardingCustomPages = newValue
+        }
+    }
+    fileprivate var onboardingCustomPages: [UIView]?
+
 }
 
 extension GiniConfigurationProxy {
@@ -111,5 +125,7 @@ extension GiniConfiguration {
         if let cancelButtonResource = giniConfigurationProxy.cancelButtonResource {
             self.cancelButtonResource = cancelButtonResource
         }
+        
+        self.onboardingPages = giniConfigurationProxy.onboardingPages
     }
 }

@@ -32,7 +32,7 @@ The example overrides the `gv_qrcode_detected_popup_message_1` and `gv_qrcode_de
 
 You can change the onboarding pages in two ways:
 1. By creating your own instances of `OnboardingPage` and pass them in a list to `GiniVision.NewInstance().SetCustomOnboardingPages(onboardingPages)`.
-2. By using the `DefaultPagesPhone.AsArrayList()` to get the list of default onboarding pages and then altering the order of the pages or remove/add pages. If you also support tablets, then you can use `DefaultPagesTablet.AsArrayList()`.
+2. By using the `DefaultPagesPhone.AsArrayList()` to get the list of default onboarding pages and then altering the order of the pages or remove/add pages. If you also support tablets, then you can use `DefaultPagesTablet.AsArrayList()`. Pass the modified list to `GiniVision.NewInstance().SetCustomOnboardingPages(onboardingPages)`.
 
 ### Troubleshooting
 
@@ -99,6 +99,12 @@ GiniConfigurationProxy gvlConfiguration = new GiniConfigurationProxy();
 ...
 gvlConfiguration.CloseButtonResource = new SimplePreferredButtonResource(null, "Close please");
 ```
+
+#### Onboarding Pages
+
+You can change the onboarding pages in two ways:
+1. By adding your array of custom `UIView`s to `gvlConfiguration.OnboardingPages`.
+2. By retrieving the default pages from `gvlConfiguration.OnboardingPages` then altering the order of the pages or remove/add pages. Pass the modified array to `gvlConfiguration.OnboardingPages`.
 
 The buttons currently available for customization are:
 
