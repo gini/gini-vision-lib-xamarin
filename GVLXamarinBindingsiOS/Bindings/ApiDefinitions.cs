@@ -194,6 +194,10 @@ namespace Binding
 		[NullAllowed, Export ("navigationBarTitleFont", ArgumentSemantic.Strong)]
 		UIFont NavigationBarTitleFont { get; set; }
 
+		// @property (nonatomic, strong) UIColor * _Nullable documentPickerNavigationBarTintColor;
+		[NullAllowed, Export ("documentPickerNavigationBarTintColor", ArgumentSemantic.Strong)]
+		UIColor DocumentPickerNavigationBarTintColor { get; set; }
+
 		// @property (nonatomic, strong) SimplePreferredButtonResource * _Nullable closeButtonResource;
 		[NullAllowed, Export ("closeButtonResource", ArgumentSemantic.Strong)]
 		SimplePreferredButtonResource CloseButtonResource { get; set; }
@@ -223,10 +227,10 @@ namespace Binding
 		UIView[] OnboardingPages { get; set; }
 	}
 
-	// @interface GVLProxy_Swift_324 (GiniConfigurationProxy)
+	// @interface GVLProxy_Swift_325 (GiniConfigurationProxy)
 	[Category]
 	[BaseType (typeof(GiniConfigurationProxy))]
-	interface GiniConfigurationProxy_GVLProxy_Swift_324
+	interface GiniConfigurationProxy_GVLProxy_Swift_325
 	{
 	}
 

@@ -71,10 +71,12 @@ namespace GVLXamarinFormsExample.iOS
                 FlashToggleEnabled = true,
                 OnboardingShowAtLaunch = false,
                 OnboardingShowAtFirstLaunch = true,
-                NavigationBarItemTintColor = UIKit.UIColor.White,
-                NavigationBarTitleFont = UIKit.UIFont.FromName("Trebuchet MS", 20),
+                NavigationBarTintColor = UIColor.Blue,
+                NavigationBarItemTintColor = UIColor.White,
+                NavigationBarTitleFont = UIFont.FromName("Trebuchet MS", 20),
+                DocumentPickerNavigationBarTintColor = UIColor.Blue,
                 CloseButtonResource = new SimplePreferredButtonResource(null, "Close please"),
-                HelpButtonResource = new SimplePreferredButtonResource(UIKit.UIImage.FromBundle("helpButton"), null),
+                HelpButtonResource = new SimplePreferredButtonResource(UIImage.FromBundle("helpButton"), null),
             };
 
             // You can change the order of the onboarding pages by getting the default pages and modifying the array

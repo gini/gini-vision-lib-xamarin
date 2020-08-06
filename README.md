@@ -100,6 +100,26 @@ GiniConfigurationProxy gvlConfiguration = new GiniConfigurationProxy();
 gvlConfiguration.CloseButtonResource = new SimplePreferredButtonResource(null, "Close please");
 ```
 
+#### Navigation Bar
+
+To configure the look of the navigation bars in GVL you should use the `GiniConfiguration` instead of `UIAppearance`. This allows GVL to prevent issues with the navigation bar colors in the `UIDocumentPickerViewController`.
+
+If you use `UIAppearance` you should reset navigation bar related customizations before launching GVL and restore them after GVL has exited.
+
+You can customize the following navigation bar and item properties:
+
+```
+GiniConfigurationProxy gvlConfiguration = new GiniConfigurationProxy
+{
+    NavigationBarItemTintColor = UIColor...,
+    NavigationBarTintColor = UIColor...,
+    NavigationBarTitleColor = UIColor...,
+    NavigationBarItemFont = UIFont...,
+    NavigationBarTitleFont = UIFont...,
+    DocumentPickerNavigationBarTintColor = UIColor...,
+};
+```
+
 #### Onboarding Pages
 
 You can change the onboarding pages in two ways:
@@ -118,4 +138,5 @@ The buttons currently available for customization are:
 | `navigationAnalysisBack`           | `CancelButtonResource`            |
 
 ### Troubleshooting
-* The app crashes at various points without an informative error message. Please make sure that you have enabled all capabilities and provided all usage strings in your `Info.plist` file. 
+* The app crashes at various points without an informative error message: please make sure that you have enabled all capabilities and provided all usage strings in your `Info.plist` file. 
+* Document picker navigation bar buttons are not visible: please apply navigation bar customizations using the `GiniConfiguration` and reset your `UIAppearance` customizations related to navigation bars before launching GVL. After GVL has finished you can restore your `UIAppearance` customizations. 

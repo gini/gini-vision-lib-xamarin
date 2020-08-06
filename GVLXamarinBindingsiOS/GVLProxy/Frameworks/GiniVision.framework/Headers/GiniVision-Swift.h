@@ -1109,8 +1109,6 @@ SWIFT_CLASS("_TtC10GiniVision29MultipageReviewViewController")
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView moveItemAtIndexPath:(NSIndexPath * _Nonnull)sourceIndexPath toIndexPath:(NSIndexPath * _Nonnull)destinationIndexPath;
 @end
 
-
-
 @class UIScrollView;
 
 @interface MultipageReviewViewController (SWIFT_EXTENSION(GiniVision)) <UICollectionViewDelegateFlowLayout>
@@ -1120,6 +1118,8 @@ SWIFT_CLASS("_TtC10GiniVision29MultipageReviewViewController")
 - (UIEdgeInsets)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 @end
+
+
 
 
 @interface MultipageReviewViewController (SWIFT_EXTENSION(GiniVision))
@@ -2452,8 +2452,6 @@ SWIFT_CLASS("_TtC10GiniVision29MultipageReviewViewController")
 - (void)collectionView:(UICollectionView * _Nonnull)collectionView moveItemAtIndexPath:(NSIndexPath * _Nonnull)sourceIndexPath toIndexPath:(NSIndexPath * _Nonnull)destinationIndexPath;
 @end
 
-
-
 @class UIScrollView;
 
 @interface MultipageReviewViewController (SWIFT_EXTENSION(GiniVision)) <UICollectionViewDelegateFlowLayout>
@@ -2463,6 +2461,8 @@ SWIFT_CLASS("_TtC10GiniVision29MultipageReviewViewController")
 - (UIEdgeInsets)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 @end
+
+
 
 
 @interface MultipageReviewViewController (SWIFT_EXTENSION(GiniVision))

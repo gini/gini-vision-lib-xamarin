@@ -25,6 +25,7 @@ public class GiniConfigurationProxy: NSObject {
     @objc public var navigationBarTitleColor: UIColor?
     @objc public var navigationBarItemFont: UIFont?
     @objc public var navigationBarTitleFont: UIFont?
+    @objc public var documentPickerNavigationBarTintColor: UIColor?
     
     @objc public var closeButtonResource: SimplePreferredButtonResource?
     @objc public var helpButtonResource: SimplePreferredButtonResource?
@@ -100,6 +101,10 @@ extension GiniConfiguration {
         
         if let navigationBarTitleFont = giniConfigurationProxy.navigationBarTitleFont {
             self.navigationBarTitleFont = navigationBarTitleFont
+        }
+        
+        if let documentPickerNavigationBarTintColor = giniConfigurationProxy.documentPickerNavigationBarTintColor {
+            self.documentPickerNavigationBarTintColor = documentPickerNavigationBarTintColor
         }
         
         if let closeButtonResource = giniConfigurationProxy.closeButtonResource {
