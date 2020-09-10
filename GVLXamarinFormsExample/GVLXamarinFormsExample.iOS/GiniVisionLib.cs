@@ -17,6 +17,7 @@ namespace GVLXamarinFormsExample.iOS
         public void GiniVisionAnalysisDidFinishWithoutResults(bool showingNoResultsScreen)
         {
             Console.WriteLine("GVL finished without results.");
+            gvlViewController.DismissViewController(true, null);
         }
 
         public void GiniVisionAnalysisDidFinishWithResult(AnalysisResultProxy result, Action<ExtractionProxies> sendFeedbackBlock)
@@ -55,14 +56,14 @@ namespace GVLXamarinFormsExample.iOS
         private readonly String id = "<id>";
         private readonly String secret = "<secret>";
 
-        private readonly GVLProxy gvlProxy;
         private readonly GVLDelegate gvlDelegate;
+        private readonly GiniConfigurationProxy gvlConfiguration;
 
         public GiniVisionLib()
         {
             gvlDelegate = new GVLDelegate();
 
-            GiniConfigurationProxy gvlConfiguration = new GiniConfigurationProxy
+            gvlConfiguration = new GiniConfigurationProxy
             {
                 DebugModeOn = true,
                 FileImportSupportedTypes = GiniVisionImportFileTypesProxy.Pdf_and_images,
@@ -87,18 +88,18 @@ namespace GVLXamarinFormsExample.iOS
 
             // Set the modified pages to be used for onboarding
             gvlConfiguration.OnboardingPages = pages;
-
-            gvlProxy = new GVLProxy(
-                domain,
-                id,
-                secret,
-                gvlConfiguration,
-                gvlDelegate);
         }
 
         public void Start()
         {
             Console.WriteLine("Start");
+
+            GVLProxy gvlProxy = new GVLProxy(
+                domain,
+                id,
+                secret,
+                gvlConfiguration,
+                gvlDelegate);
 
             UIKit.UIViewController gvlViewController = gvlProxy.ViewController;
             gvlDelegate.gvlViewController = gvlViewController;
