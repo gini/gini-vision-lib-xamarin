@@ -65,10 +65,10 @@ namespace Binding
 		IntPtr Constructor ([NullAllowed] BoxProxy box, [NullAllowed] string candidates, string entity, string value, [NullAllowed] string name);
 	}
 
-	// @interface GVLProxy_Swift_254 (ExtractionProxy)
+	// @interface GVLProxy_Swift_256 (ExtractionProxy)
 	[Category]
 	[BaseType (typeof(ExtractionProxy))]
-	interface ExtractionProxy_GVLProxy_Swift_254
+	interface ExtractionProxy_GVLProxy_Swift_256
 	{
 	}
 
@@ -227,10 +227,10 @@ namespace Binding
 		UIView[] OnboardingPages { get; set; }
 	}
 
-	// @interface GVLProxy_Swift_325 (GiniConfigurationProxy)
+	// @interface GVLProxy_Swift_327 (GiniConfigurationProxy)
 	[Category]
 	[BaseType (typeof(GiniConfigurationProxy))]
-	interface GiniConfigurationProxy_GVLProxy_Swift_325
+	interface GiniConfigurationProxy_GVLProxy_Swift_327
 	{
 	}
 
