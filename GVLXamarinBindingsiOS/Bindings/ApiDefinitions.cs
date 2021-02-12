@@ -65,10 +65,10 @@ namespace Binding
 		IntPtr Constructor ([NullAllowed] BoxProxy box, [NullAllowed] string candidates, string entity, string value, [NullAllowed] string name);
 	}
 
-	// @interface GVLProxy_Swift_256 (ExtractionProxy)
+	// @interface GVLProxy_Swift_255 (ExtractionProxy)
 	[Category]
 	[BaseType (typeof(ExtractionProxy))]
-	interface ExtractionProxy_GVLProxy_Swift_256
+	interface ExtractionProxy_GVLProxy_Swift_255
 	{
 	}
 
@@ -227,10 +227,10 @@ namespace Binding
 		UIView[] OnboardingPages { get; set; }
 	}
 
-	// @interface GVLProxy_Swift_327 (GiniConfigurationProxy)
+	// @interface GVLProxy_Swift_325 (GiniConfigurationProxy)
 	[Category]
 	[BaseType (typeof(GiniConfigurationProxy))]
-	interface GiniConfigurationProxy_GVLProxy_Swift_327
+	interface GiniConfigurationProxy_GVLProxy_Swift_325
 	{
 	}
 
@@ -249,7 +249,7 @@ namespace Binding
 		void RemoveStoredCredentials ();
 	}
 
-	// @interface SimplePreferredButtonResource : NSObject
+	// @interface SimplePreferredButtonResource : NSObject <PreferredButtonResource>
 	[BaseType (typeof(NSObject))]
 	[DisableDefaultCtor]
 	interface SimplePreferredButtonResource

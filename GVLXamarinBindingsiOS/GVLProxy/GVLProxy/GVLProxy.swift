@@ -9,7 +9,6 @@
 import Foundation
 import GiniVision
 import Gini
-import TrustKit
 
 @objc(GiniSDKProxy)
 public class GiniSDKProxy: NSObject {
