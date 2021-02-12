@@ -19,4 +19,6 @@
     
     <attr path="/api/package[@name='net.gini.android.vision.review']/interface[@name='ReviewFragmentListener']/method[@name='onProceedToAnalysisScreen' and count(parameter)=2]/parameter[@name='p0']"
         name="name">p00</attr>
+    
+    <attr path="/api/package[@name='net.gini.android.vision.camera']/class[@name='ImageStack.StackBitmap']" name="visibility">public</attr>
 </metadata>
