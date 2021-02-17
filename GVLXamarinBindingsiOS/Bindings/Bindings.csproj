@@ -52,10 +52,6 @@
       <Kind>Framework</Kind>
       <Frameworks>Foundation AVFoundation UIKit Security CoreMotion Photos CoreFoundation CoreGraphics</Frameworks>
     </NativeReference>
-    <NativeReference Include="..\GVLProxy\Frameworks\TrustKit.framework">
-      <Kind>Framework</Kind>
-      <Frameworks>Foundation</Frameworks>
-    </NativeReference>
     <NativeReference Include="..\GVLProxy\build\Release-fat\GVLProxy.framework">
       <Kind>Framework</Kind>
       <Frameworks>Foundation</Frameworks>

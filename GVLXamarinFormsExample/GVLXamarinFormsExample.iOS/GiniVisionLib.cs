@@ -9,7 +9,7 @@ using UIKit;
 [assembly: Dependency(typeof(GVLXamarinFormsExample.iOS.GiniVisionLib))]
 namespace GVLXamarinFormsExample.iOS
 {
-    public class GVLDelegate : NSObject, IGVLProxyDelegate
+    public class GVLDelegate : NSObject, GVLProxyDelegate
     {
 
         public UIKit.UIViewController gvlViewController;

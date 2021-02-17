@@ -3,22 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23002FC6248914820013A3B9 /* TrustKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC3248914820013A3B9 /* TrustKit.framework */; };
-		23002FC7248914820013A3B9 /* Gini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC4248914820013A3B9 /* Gini.framework */; };
-		23002FC8248914820013A3B9 /* GiniVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC5248914820013A3B9 /* GiniVision.framework */; };
+		23002FC7248914820013A3B9 /* Gini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC4248914820013A3B9 /* Gini.framework */; platformFilter = ios; };
 		520EA666244896610024B2B4 /* GVLProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 520EA664244896610024B2B4 /* GVLProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		520EA67F2448A1430024B2B4 /* GVLProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA67E2448A1430024B2B4 /* GVLProxy.swift */; };
-		5255991B246415E200FCDB26 /* ExtractionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991A246415E200FCDB26 /* ExtractionProxy.swift */; };
-		5255991D24695A5E00FCDB26 /* GiniConfigurationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991C24695A5E00FCDB26 /* GiniConfigurationProxy.swift */; };
-		52AE3D2B247BF22D00964A4F /* SimplePreferredButtonResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE3D2A247BF22D00964A4F /* SimplePreferredButtonResource.swift */; };
+		520EA67F2448A1430024B2B4 /* GVLProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EA67E2448A1430024B2B4 /* GVLProxy.swift */; platformFilter = ios; };
+		5255991B246415E200FCDB26 /* ExtractionProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991A246415E200FCDB26 /* ExtractionProxy.swift */; platformFilter = ios; };
+		5255991D24695A5E00FCDB26 /* GiniConfigurationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255991C24695A5E00FCDB26 /* GiniConfigurationProxy.swift */; platformFilter = ios; };
+		52AE3D2B247BF22D00964A4F /* SimplePreferredButtonResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE3D2A247BF22D00964A4F /* SimplePreferredButtonResource.swift */; platformFilter = ios; };
+		7EB1324F25D6F7450054B8F6 /* GiniVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23002FC5248914820013A3B9 /* GiniVision.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23002FC3248914820013A3B9 /* TrustKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TrustKit.framework; path = Frameworks/TrustKit.framework; sourceTree = "<group>"; };
 		23002FC4248914820013A3B9 /* Gini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gini.framework; path = Frameworks/Gini.framework; sourceTree = "<group>"; };
 		23002FC5248914820013A3B9 /* GiniVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GiniVision.framework; path = Frameworks/GiniVision.framework; sourceTree = "<group>"; };
 		520EA661244896610024B2B4 /* GVLProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GVLProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,8 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23002FC8248914820013A3B9 /* GiniVision.framework in Frameworks */,
-				23002FC6248914820013A3B9 /* TrustKit.framework in Frameworks */,
+				7EB1324F25D6F7450054B8F6 /* GiniVision.framework in Frameworks */,
 				23002FC7248914820013A3B9 /* Gini.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +76,6 @@
 			children = (
 				23002FC4248914820013A3B9 /* Gini.framework */,
 				23002FC5248914820013A3B9 /* GiniVision.framework */,
-				23002FC3248914820013A3B9 /* TrustKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,11 +298,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BQY9KX4V88;
+				DEVELOPMENT_TEAM = 25NQSWL3GZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -334,11 +331,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BQY9KX4V88;
+				DEVELOPMENT_TEAM = 25NQSWL3GZ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",

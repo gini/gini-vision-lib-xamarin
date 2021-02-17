@@ -10,15 +10,15 @@
 "ginivision.navigationbar.onboarding.title"    = "Anleitung";
 "ginivision.navigationbar.review.title"        = "Überprüfen";
 "ginivision.navigationbar.analysis.title"      = "Etwas Geduld, analysiere Foto";
-"ginivision.navigationbar.camera.close"        = "Schließen";
+"ginivision.navigationbar.camera.close"        = "";
 "ginivision.navigationbar.camera.help"         = "Hilfe";
 "ginivision.navigationbar.onboarding.continue" = "Weiter";
-"ginivision.navigationbar.review.back"         = "Zurück";
-"ginivision.navigationbar.review.close"        = "Schließen";
+"ginivision.navigationbar.review.back"         = "";
+"ginivision.navigationbar.review.close"        = "";
 "ginivision.navigationbar.review.continue"     = "Weiter";
 "ginivision.navigationbar.analysis.back"       = "Abbrechen";
-"ginivision.navigationbar.help.backToCamera"   = "Zurück";
-"ginivision.navigationbar.help.backToMenu"     = "Zurück";
+"ginivision.navigationbar.help.backToCamera"   = "";
+"ginivision.navigationbar.help.backToMenu"     = "";
 
 
 "ginivision.camera.captureButton" = "Auslösen";
@@ -52,9 +52,9 @@
 "ginivision.camera.popupTitleImportPDForPhotos" = "Fotos oder PDF importieren";
 "ginivision.camera.popupCancel" = "Abbrechen";
 
-"ginivision.onboarding.firstPage"  = "Seite vollständig in den angezeigten Rahmen einpassen";
+"ginivision.onboarding.firstPage"  = "Gerät parallel über die Seite halten";
 "ginivision.onboarding.secondPage" = "Seite glatt streichen";
-"ginivision.onboarding.thirdPage"  = "Gerät parallel über die Seite halten";
+"ginivision.onboarding.thirdPage"  = "Seite vollständig in den angezeigten Rahmen einpassen";
 "ginivision.onboarding.fourthPage" = "Beim Abfotografieren der Rechnung oder des Überweisungsträgers auf gute Beleuchtung achten";
 "ginivision.onboarding.fifthPage"  = "Jetzt ist es möglich, eine Rechnung mit mehreren Seiten zu analysieren";
 

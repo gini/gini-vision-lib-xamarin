@@ -10,15 +10,15 @@
 "ginivision.navigationbar.onboarding.title"    = "Instructions";
 "ginivision.navigationbar.review.title"        = "Check photo quality";
 "ginivision.navigationbar.analysis.title"      = "Be patient, analysing photo";
-"ginivision.navigationbar.camera.close"        = "Close";
+"ginivision.navigationbar.camera.close"        = "";
 "ginivision.navigationbar.camera.help"         = "Help";
 "ginivision.navigationbar.onboarding.continue" = "Next";
-"ginivision.navigationbar.review.back"         = "Back";
-"ginivision.navigationbar.review.close"        = "Close";
+"ginivision.navigationbar.review.back"         = "";
+"ginivision.navigationbar.review.close"        = "";
 "ginivision.navigationbar.review.continue"     = "Next";
 "ginivision.navigationbar.analysis.back"       = "Cancel";
-"ginivision.navigationbar.help.backToCamera"   = "Back";
-"ginivision.navigationbar.help.backToMenu"     = "Back";
+"ginivision.navigationbar.help.backToCamera"   = "";
+"ginivision.navigationbar.help.backToMenu"     = "";
 
 
 "ginivision.camera.captureButton" = "Capture";
@@ -52,9 +52,9 @@
 "ginivision.camera.popupTitleImportPDForPhotos" = "Import Photos or PDF files";
 "ginivision.camera.popupCancel" = "Cancel";
 
-"ginivision.onboarding.firstPage"  = "Capture the entire page within the frame shown on the camera screen";
+"ginivision.onboarding.firstPage"  = "Hold device parallel over the page";
 "ginivision.onboarding.secondPage" = "Flatten the page";
-"ginivision.onboarding.thirdPage"  = "Hold device parallel over the page";
+"ginivision.onboarding.thirdPage"  = "Capture the entire page within the frame shown on the camera screen";
 "ginivision.onboarding.fourthPage" = "Ensure good lighting when photographing the invoice or remittance slip";
 "ginivision.onboarding.fifthPage"  = "It's now possible to analyse an invoice with multiple pages!";
 

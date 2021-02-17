@@ -9,7 +9,7 @@ OUTPUT_FAT_LIBRARIES_PATH="Frameworks"
 
 cd GVLProxy
 
-#Clean up
+# Clean up
 rm -rf Frameworks/*
 rm -rf PodsProject/Pods
 rm -rf PodsProject/build
@@ -20,8 +20,8 @@ cd PodsProject
 # Install pods
 printf -- "\n$arrow Installing \033[1mPods\033[0m..."
 
-#add --repo-update
-podinstallresult=$(pod install 2>&1)
+# Remove --repo-update for faster installations, if you already have installed the latest version of pods already
+podinstallresult=$(pod install --repo-update 2>&1)
 if [ ! -f "Podfile.lock" ]; then
     printf "\n❌  $podinstallresult"
     exit
@@ -32,8 +32,8 @@ printf -- " ✅\n"
 # Build frameworks
 printf -- "$arrow Building \033[1mpod frameworks\033[0m..."
 
-xcodebuild -project Pods/Pods.xcodeproj -target GiniVision -configuration Release ENABLE_BITCODE=NO -sdk iphonesimulator &> /dev/null
-xcodebuild -project Pods/Pods.xcodeproj -target GiniVision -configuration Release ENABLE_BITCODE=NO -sdk iphoneos &> /dev/null
+xcodebuild -project Pods/Pods.xcodeproj -target GiniVision -configuration Release ENABLE_BITCODE=NO -sdk iphonesimulator clean build
+xcodebuild -project Pods/Pods.xcodeproj -target GiniVision -configuration Release ENABLE_BITCODE=NO -sdk iphoneos build
 
 printf -- " ✅\n"
 
@@ -69,8 +69,8 @@ printf -- " ✅\n"
 
 printf -- "$arrow Building \033[1mproxy library\033[0m..."
 
-xcodebuild -sdk iphonesimulator -project GVLProxy.xcodeproj -configuration Release &> /dev/null
-xcodebuild -sdk iphoneos -project GVLProxy.xcodeproj -configuration Release &> /dev/null
+xcodebuild -sdk iphonesimulator -project GVLProxy.xcodeproj -configuration Release clean build
+xcodebuild -sdk iphoneos -project GVLProxy.xcodeproj -configuration Release build
 
 cd build
 rm -rf Release-fat
@@ -78,16 +78,26 @@ cp -R Release-iphoneos Release-fat
 cp -R Release-iphonesimulator/GVLProxy.framework/Modules/GVLProxy.swiftmodule Release-fat/GVLProxy.framework/Modules/GVLProxy.swiftmodule
 lipo -create -output Release-fat/GVLProxy.framework/GVLProxy Release-iphoneos/GVLProxy.framework/GVLProxy Release-iphonesimulator/GVLProxy.framework/GVLProxy
 
+# Copy all required frameworks to Release-fat to be available for sharpie
+for dir in ../"$OUTPUT_FAT_LIBRARIES_PATH"/*
+do
+    cp -R "${dir%/}" Release-fat
+done
+
 printf -- " ✅\n"
 
 printf -- "$arrow Creating \033[1mbindings\033[0m..."
 
-sharpie bind --sdk=iphoneos --output="XamarinApiDef" --namespace="Binding" --scope=Release-fat/GVLProxy.framework/Headers Release-fat/GVLProxy.framework/Headers/GVLProxy-Swift.h &> /dev/null
+sharpie bind --sdk=iphoneos --output="XamarinApiDef" --namespace="Binding" --scope=Release-fat/GVLProxy.framework/Headers Release-fat/GVLProxy.framework/Headers/GVLProxy-Swift.h -c -F ./Release-fat
 
 # Need to pamper the bindings:
 
 # Remove this line
 sed '/using GVLProxy;/d' ./XamarinApiDef/APIDefinitions.cs > ./XamarinApiDef/APIDefinitions.cs_new
+mv ./XamarinApiDef/APIDefinitions.cs_new ./XamarinApiDef/APIDefinitions.cs
+
+# Remove inheriting from PreferredButtonResource
+sed 's/ : IPreferredButtonResource//g' ./XamarinApiDef/APIDefinitions.cs > ./XamarinApiDef/APIDefinitions.cs_new
 mv ./XamarinApiDef/APIDefinitions.cs_new ./XamarinApiDef/APIDefinitions.cs
 
 printf -- " ✅\n"
@@ -100,17 +110,17 @@ printf -- "$arrow Building \033[1mGiniVision.iOS.dll\033[0m..."
 
 # Build Bindings project
 cd ../Bindings
-msbuild -t:Clean > /dev/null
+msbuild -t:Clean
 
 # This will fail
-msbuild > /dev/null
+msbuild
 
 # Fix Xamarin pointlessly adding I to protocol names, but not everywhere.
-sed 's/GVLProxyDelegate/IGVLProxyDelegate/g' ./obj/Debug/ios/GVLProxy.g.cs > ./obj/Debug/ios/GVLProxy.g.cs_new
-mv ./obj/Debug/ios/GVLProxy.g.cs_new ./obj/Debug/ios/GVLProxy.g.cs
+sed 's/IGVLProxyDelegate/GVLProxyDelegate/g' ./obj/Debug/ios/Binding/GVLProxyDelegate.g.cs > ./obj/Debug/ios/Binding/GVLProxyDelegate.g.cs_new
+mv ./obj/Debug/ios/Binding/GVLProxyDelegate.g.cs_new ./obj/Debug/ios/Binding/GVLProxyDelegate.g.cs
 
 # This should succeed
-msbuild > /dev/null
+msbuild
 
 printf -- " ✅\n"
 
