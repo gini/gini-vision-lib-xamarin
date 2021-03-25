@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using Android.Content;
+﻿using Android.Content;
 using Android.OS;
-using Java.Interop;
 using Net.Gini.Android.Vision;
 using Net.Gini.Android.Vision.Camera;
 using Net.Gini.Android.Vision.Network;
 using Net.Gini.Android.Vision.Network.Model;
 using Net.Gini.Android.Vision.Onboarding;
-using Net.Gini.Android.Vision.Internal.Util;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(GVLXamarinFormsExample.Droid.GiniVisionLib))]
 namespace GVLXamarinFormsExample.Droid
 {
-    public class GiniVisionLib: IGiniVisionLib
+    public class GiniVisionLib : IGiniVisionLib
     {
         private readonly GiniVisionDefaultNetworkService giniNetworkService;
         private readonly GiniVisionDefaultNetworkApi giniNetworkApi;
@@ -24,8 +21,9 @@ namespace GVLXamarinFormsExample.Droid
         public GiniVisionLib()
         {
             // Create the default network service instance which talks to the Gini API to upload images and pdfs and downloads the extractions
+
             giniNetworkService = GiniVisionDefaultNetworkService.InvokeBuilder(Forms.Context)
-                .SetClientCredentials("myClientId", "myClientSecret", "myEmailDomain")
+                .SetClientCredentials("gini-xamarin-test", "V9gHiqGR51whzVkTnNGtY2GP", "user.gini.net")
                 .Build();
 
             // Create the default network api instance which allows easy upload of extraction feedback
@@ -61,7 +59,7 @@ namespace GVLXamarinFormsExample.Droid
 
         public void Start()
         {
-           var activity = (MainActivity)Forms.Context;
+            var activity = (MainActivity)Forms.Context;
 
             activity.ActivityResult += OnActivityResult;
 
