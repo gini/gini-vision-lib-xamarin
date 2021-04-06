@@ -34,6 +34,16 @@ You can change the onboarding pages in two ways:
 1. By creating your own instances of `OnboardingPage` and pass them in a list to `GiniVision.NewInstance().SetCustomOnboardingPages(onboardingPages)`.
 2. By using the `DefaultPagesPhone.AsArrayList()` to get the list of default onboarding pages and then altering the order of the pages or remove/add pages. If you also support tablets, then you can use `DefaultPagesTablet.AsArrayList()`. Pass the modified list to `GiniVision.NewInstance().SetCustomOnboardingPages(onboardingPages)`.
 
+### Building
+
+Because modules depend on each other they need to be build in the right order:
+1. TrustKitXamarin
+2. GiniApiSDKXamarinAndroid
+3. GVLXamarinAndroid
+4. GVLNetworkingXamarinAndroid
+
+Only after that the example app can be run.
+
 ### Troubleshooting
 
 * `"No resource found that matches the given name"` errors: set the `AndroidUseAapt2` flag to `false` in your csproj configuration.
