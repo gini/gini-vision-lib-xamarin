@@ -36,7 +36,7 @@ You can change the onboarding pages in two ways:
 
 ### Building
 
-Because modules depend on eachother they need to be build in the right order:
+Because modules depend on each other they need to be build in the right order:
 1. TrustKitXamarin
 2. GiniApiSDKXamarinAndroid
 3. GVLXamarinAndroid
