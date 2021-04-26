@@ -32,7 +32,7 @@ printf -- " ✅\n"
 # Build frameworks
 printf -- "$arrow Building \033[1mpod frameworks\033[0m..."
 
-xcodebuild -project Pods/Pods.xcodeproj -target GiniVision -configuration Release ENABLE_BITCODE=NO -sdk iphonesimulator clean build
+xcodebuild -project Pods/Pods.xcodeproj -target GiniVision -configuration Release ENABLE_BITCODE=NO -sdk iphonesimulator -arch "x86_64" ONLY_ACTIVE_ARCH=NO VALID_ARCHS="x86_64" clean build
 xcodebuild -project Pods/Pods.xcodeproj -target GiniVision -configuration Release ENABLE_BITCODE=NO -sdk iphoneos build
 
 printf -- " ✅\n"
@@ -69,7 +69,7 @@ printf -- " ✅\n"
 
 printf -- "$arrow Building \033[1mproxy library\033[0m..."
 
-xcodebuild -sdk iphonesimulator -project GVLProxy.xcodeproj -configuration Release clean build
+xcodebuild -sdk iphonesimulator -project GVLProxy.xcodeproj -configuration Release -arch "x86_64" ONLY_ACTIVE_ARCH=NO VALID_ARCHS="x86_64" clean build
 xcodebuild -sdk iphoneos -project GVLProxy.xcodeproj -configuration Release build
 
 cd build
@@ -99,6 +99,10 @@ mv ./XamarinApiDef/APIDefinitions.cs_new ./XamarinApiDef/APIDefinitions.cs
 # Remove inheriting from PreferredButtonResource
 sed 's/ : IPreferredButtonResource//g' ./XamarinApiDef/APIDefinitions.cs > ./XamarinApiDef/APIDefinitions.cs_new
 mv ./XamarinApiDef/APIDefinitions.cs_new ./XamarinApiDef/APIDefinitions.cs
+
+# Fix nint to long issue
+sed 's/nint/long/g' ./XamarinApiDef/StructsAndEnums.cs > ./XamarinApiDef/StructsAndEnums.cs_new
+mv ./XamarinApiDef/StructsAndEnums.cs_new ./XamarinApiDef/StructsAndEnums.cs
 
 printf -- " ✅\n"
 
