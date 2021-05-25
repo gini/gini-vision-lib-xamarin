@@ -23,7 +23,7 @@ namespace GVLXamarinFormsExample.Droid
             // Create the default network service instance which talks to the Gini API to upload images and pdfs and downloads the extractions
 
             giniNetworkService = GiniVisionDefaultNetworkService.InvokeBuilder(Forms.Context)
-                .SetClientCredentials("gini-xamarin-test", "V9gHiqGR51whzVkTnNGtY2GP", "user.gini.net")
+                .SetClientCredentials("your-client-id", "your-client-secret", "example-domain.com")
                 .Build();
 
             // Create the default network api instance which allows easy upload of extraction feedback
@@ -55,6 +55,8 @@ namespace GVLXamarinFormsExample.Droid
                .SetShouldShowOnboardingAtFirstRun(true)
                .SetCustomOnboardingPages(onboardingPages)
                .Build();
+
+            Android.Util.Log.Debug("gvl", $"starting GVL version: {Net.Gini.Android.Vision.BuildConfig.VersionName}");
         }
 
         public void Start()
