@@ -21,7 +21,7 @@ cd PodsProject
 printf -- "\n$arrow Installing \033[1mPods\033[0m..."
 
 # Remove --repo-update for faster installations, if you already have installed the latest version of pods already
-podinstallresult=$(pod install --repo-update 2>&1)
+podinstallresult=$(pod install 2>&1)
 if [ ! -f "Podfile.lock" ]; then
     printf "\n❌  $podinstallresult"
     exit
