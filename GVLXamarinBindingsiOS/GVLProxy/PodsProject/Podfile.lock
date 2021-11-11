@@ -1,0 +1,25 @@
+PODS:
+  - Gini/DocumentsAPI (1.0.1)
+  - GiniVision (5.7.2):
+    - GiniVision/Core (= 5.7.2)
+  - GiniVision/Core (5.7.2)
+  - GiniVision/Networking (5.7.2):
+    - Gini/DocumentsAPI (~> 1.0.1)
+    - GiniVision/Core
+
+DEPENDENCIES:
+  - GiniVision
+  - GiniVision/Networking
+
+SPEC REPOS:
+  https://github.com/gini/gini-podspecs:
+    - Gini
+    - GiniVision
+
+SPEC CHECKSUMS:
+  Gini: 3c393e83afbacc0c211e4ec82233ad46ff8cf9e6
+  GiniVision: 646983faa9e42dbde2744af71ecf3bcacb87cbdd
+
+PODFILE CHECKSUM: e741b2f442f78336c62b37cebe7f85a0ed3bcdaa
+
+COCOAPODS: 1.11.2
