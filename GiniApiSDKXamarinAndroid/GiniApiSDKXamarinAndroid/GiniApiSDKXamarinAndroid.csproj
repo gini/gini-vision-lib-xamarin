@@ -14,7 +14,7 @@
     <AssemblyName>GiniApiSDKXamarinAndroid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Deterministic>True</Deterministic>
-    <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
     <AndroidClassParser>class-parse</AndroidClassParser>
     <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
@@ -60,13 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Volley">
-      <Version>1.1.1.1</Version>
+      <Version>1.2.1.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Core">
-      <Version>1.3.2.3</Version>
+      <Version>1.9.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Preference">
-      <Version>1.1.1.8</Version>
+      <Version>1.2.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
